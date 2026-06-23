@@ -2,32 +2,18 @@
 <html>
 <head>
   <title>Jinnworks</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SYSTEM CSS -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/jinnworks.css" />
-  <noscript> <link rel="stylesheet" href="assets/css/noscript.css"/> </noscript>
-  <script src="assets/js/jquery.min.js"></script>
+
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
-
-<body class="is-preload">
-
-  <!-- BOOT SCREEN -->
-  <div id="boot-screen">
-    <div class="boot-text">
-JINNWORKS SYSTEM BOOTING...
-CHECKING FILE INTEGRITY...
-LOADING ENVIRONMENT...
-WELCOME BACK.
-    </div>
-  </div>
-
-  <!-- CRT FLASH -->
-  <div id="crt-flash"></div>
-
-  <!-- WRAPPER -->
-  <div id="wrapper">
+  
+<body>
 
   <!-- BOOT SCREEN -->
   <div id="boot-screen">
@@ -37,8 +23,15 @@ Welcome.
     </div>
   </div>
 
-  <!-- CRT FLASH -->
-  <div id="crt-flash"></div>
+  <!-- CONTENT WRAPPER -->
+  <div id="wrapper">
+
+    <!-- NAV (IDENTICAL ON EVERY PAGE) -->
+    <div class="nav">
+      <a href="index.html">HOME</a>
+      <a href="games.html">GAMES</a>
+      <a href="presskit.html">PRESS KIT</a>
+    </div>
 
   <!-- MAIN LANDING -->
   <div style="text-align:center; padding:80px 20px; color:#FFD98A;">
@@ -58,18 +51,8 @@ Welcome.
 
 </div>
 
-  <!-- SCRIPTS -->
+<!-- SCRIPTS -->
   <script src="assets/js/jquery.min.js"></script>
-
-  <script>
-    // ensure boot screen fully clears
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        const boot = document.getElementById("boot-screen");
-        if (boot) boot.remove();
-      }, 3000);
-    });
-  </script>
 
 </body>
 </html>
