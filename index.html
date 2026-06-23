@@ -6,75 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
   <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-  <style>
-    /* =========================
-       BOOT SCREEN (INDEX ONLY)
-    ========================== */
-    #boot-screen{
-      position:fixed;
-      inset:0;
-      background:black;
-      color:#FFA100;
-      font-family:'Share Tech Mono', monospace;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
-      animation:bootFade 3s forwards;
-      padding:20px;
-    }
-
-    @keyframes bootFade{
-      0%{opacity:1;}
-      80%{opacity:1;}
-      100%{opacity:0; visibility:hidden;}
-    }
-
-    .boot-text{
-      white-space:pre-line;
-      font-size:1rem;
-      text-shadow:0 0 10px #FFA100;
-    }
-
-    /* =========================
-       CRT FLASH
-    ========================== */
-    #crt-flash{
-      position:fixed;
-      inset:0;
-      background:white;
-      opacity:0.15;
-      pointer-events:none;
-      z-index:9998;
-      animation:crtFlash 0.4s ease-out;
-    }
-
-    @keyframes crtFlash{
-      0%{opacity:0.2;}
-      100%{opacity:0;}
-    }
-
-    /* =========================
-       NAV (FUTURE PROOF)
-    ========================== */
-    .nav{
-      text-align:center;
-      margin:20px 0;
-    }
-
-    .nav a{
-      color:#FFA100;
-      margin:0 10px;
-      text-decoration:none;
-      font-family:'Share Tech Mono', monospace;
-    }
-
-    .nav a:hover{
-      text-shadow:0 0 8px #FFA100;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/jinnworks.css" />
+  <noscript> <link rel="stylesheet" href="assets/css/noscript.css"/> </noscript>
+  <script src="assets/js/jquery.min.js"></script>
 </head>
 
 <body class="is-preload">
