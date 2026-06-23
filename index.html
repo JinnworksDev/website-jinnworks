@@ -1,48 +1,150 @@
 <!DOCTYPE HTML>
-<!--
-	Originaly made as Stellar by HTML5 UP, changed by Jinnworks for Jinnworks since then.
-	html5up.net | @ajlkn
--->
 <html>
-	<head>
-		<title>Jinnworks</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+  <title>Jinnworks</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-				<h1 class="psx-header">Is There Escape?</h1>
- 					<p class="psx-quote">
-						 "Reality is not what we actually think it is."
-					</p>
-				
-				<div class="psx-warning">
-					<span class="psx-warning-title">⚠ WARNING ⚠</span>
-						 This experience contains content not for the faint-hearted.
-				</div>
-				
-				<div class="psx-terminal">
-						OUR UNDERSTANDING OF ENJOYMENT IS RUDIMENTARY, SOMETIMES... YOU NEED TO JOLT THE PSYCHE 
-				</div>
-				
-				<h2>THE SITUATION</h2>
-					<p>
-						 You awake in a subway station. It smells of death and looks empty; you have no idea how you got there.			
-						 Escape—try to—it's all you can do.
-					</p>
-				
-				<img class="psx-screenshot" src="https://i.ibb.co/V0KZNC7w/Are-You-Not.png" alt="Gameplay Screenshot" >
-					<p class="psx-download">
-						 [ THE CORRUPTED DOES NOT CORRUPT, JUST AS THE CORRUPTER DOES NOT SIN, BUT REVEALS TRUTH ]
-					</p>
-			</div>
+  <style>
+    /* =========================
+       BOOT SCREEN (INDEX ONLY)
+    ========================== */
+    #boot-screen{
+      position:fixed;
+      inset:0;
+      background:black;
+      color:#FFA100;
+      font-family:'Share Tech Mono', monospace;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      animation:bootFade 3s forwards;
+      padding:20px;
+    }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-	</body>
+    @keyframes bootFade{
+      0%{opacity:1;}
+      80%{opacity:1;}
+      100%{opacity:0; visibility:hidden;}
+    }
+
+    .boot-text{
+      white-space:pre-line;
+      font-size:1rem;
+      text-shadow:0 0 10px #FFA100;
+    }
+
+    /* =========================
+       CRT FLASH
+    ========================== */
+    #crt-flash{
+      position:fixed;
+      inset:0;
+      background:white;
+      opacity:0.15;
+      pointer-events:none;
+      z-index:9998;
+      animation:crtFlash 0.4s ease-out;
+    }
+
+    @keyframes crtFlash{
+      0%{opacity:0.2;}
+      100%{opacity:0;}
+    }
+
+    /* =========================
+       NAV (FUTURE PROOF)
+    ========================== */
+    .nav{
+      text-align:center;
+      margin:20px 0;
+    }
+
+    .nav a{
+      color:#FFA100;
+      margin:0 10px;
+      text-decoration:none;
+      font-family:'Share Tech Mono', monospace;
+    }
+
+    .nav a:hover{
+      text-shadow:0 0 8px #FFA100;
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+
+  <!-- BOOT SCREEN -->
+  <div id="boot-screen">
+    <div class="boot-text">
+JINNWORKS SYSTEM BOOTING...
+CHECKING FILE INTEGRITY...
+LOADING ENVIRONMENT...
+WELCOME BACK.
+    </div>
+  </div>
+
+  <!-- CRT FLASH -->
+  <div id="crt-flash"></div>
+
+  <!-- WRAPPER -->
+  <div id="wrapper">
+
+    <!-- NAV (future pages) -->
+    <div class="nav">
+      <a href="index.html">HOME</a>
+      <a href="games.html">GAMES</a>
+      <a href="presskit.html">PRESS KIT</a>
+    </div>
+
+    <!-- YOUR ORIGINAL CONTENT -->
+    <h1 class="psx-header">Is There Escape?</h1>
+
+    <p class="psx-quote">
+      "Reality is not what we actually think it is."
+    </p>
+
+    <div class="psx-warning">
+      <span class="psx-warning-title">⚠ WARNING ⚠</span>
+      This experience contains content not for the faint-hearted.
+    </div>
+
+    <div class="psx-terminal">
+OUR UNDERSTANDING OF ENJOYMENT IS RUDIMENTARY, SOMETIMES... YOU NEED TO JOLT THE PSYCHE
+    </div>
+
+    <h2>THE SITUATION</h2>
+
+    <p>
+      You awake in a subway station. It smells of death and looks empty; you have no idea how you got there.
+      Escape—try to—it's all you can do.
+    </p>
+
+    <img class="psx-screenshot" src="https://i.ibb.co/V0KZNC7w/Are-You-Not.png" alt="Gameplay Screenshot">
+
+    <p class="psx-download">
+      [ THE CORRUPTED DOES NOT CORRUPT, JUST AS THE CORRUPTER DOES NOT SIN, BUT REVEALS TRUTH ]
+    </p>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/jquery.min.js"></script>
+
+  <script>
+    // ensure boot screen fully clears
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const boot = document.getElementById("boot-screen");
+        if (boot) boot.remove();
+      }, 3000);
+    });
+  </script>
+
+</body>
 </html>
