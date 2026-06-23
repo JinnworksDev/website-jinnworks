@@ -1,0 +1,228 @@
+/* =========================
+   JINNWORKS VISUAL SYSTEM
+   (Overrides / Identity Layer)
+========================= */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
+
+/* =========================
+   ROOT THEME
+========================= */
+:root{
+  --bg:#0b0008;
+  --bg2:#160010;
+
+  --accent:#FFA100;
+  --accent-soft:#FFBF3F;
+
+  --text:#FFD98A;
+  --text-dim:#C8A57A;
+
+  --border:rgba(255,161,0,.35);
+}
+
+/* =========================
+   GLOBAL RESET OVERRIDE
+========================= */
+body{
+  background: radial-gradient(circle at top, #1a0012, var(--bg));
+  color:var(--text-dim);
+  font-family:'Share Tech Mono', monospace;
+  margin:0;
+}
+
+/* Prevent HTML5 UP layout interference */
+#wrapper{
+  max-width:1100px;
+  margin:0 auto;
+  padding:40px 20px;
+}
+
+/* =========================
+   LINKS (GLOBAL STYLE)
+========================= */
+a{
+  color:var(--accent);
+  text-decoration:none;
+  transition:.2s ease;
+}
+
+a:hover{
+  text-shadow:0 0 8px var(--accent);
+}
+
+/* =========================
+   HEADERS (OVERRIDE TEMPLATE)
+========================= */
+h1, h2, h3{
+  font-family:'VT323', monospace;
+  color:var(--accent);
+  letter-spacing:2px;
+  text-shadow:0 0 10px rgba(255,161,0,.25);
+}
+
+/* =========================
+   NAV SYSTEM
+========================= */
+.nav{
+  text-align:center;
+  margin-bottom:40px;
+  padding:10px;
+  border-bottom:1px solid var(--border);
+}
+
+.nav a{
+  margin:0 12px;
+  font-size:1.1rem;
+}
+
+/* =========================
+   PSX CORE CONTAINER
+========================= */
+.psx-container{
+  background:linear-gradient(to bottom, var(--bg2), #000);
+  border:2px solid var(--border);
+  padding:25px;
+  box-shadow:0 0 25px rgba(255,161,0,.08);
+}
+
+/* Header */
+.psx-header{
+  font-size:4rem;
+  text-align:center;
+  letter-spacing:5px;
+}
+
+/* Quote */
+.psx-quote{
+  text-align:center;
+  font-style:italic;
+  color:var(--text-dim);
+}
+
+/* Warning box */
+.psx-warning{
+  border:1px solid var(--accent);
+  padding:12px;
+  margin:20px 0;
+  text-align:center;
+  background:rgba(255,161,0,.05);
+}
+
+.psx-warning-title{
+  display:block;
+  color:var(--accent);
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+/* Terminal block */
+.psx-terminal{
+  background:#0a0007;
+  border:1px solid var(--accent);
+  padding:15px;
+  color:var(--accent);
+  font-family:'VT323', monospace;
+  font-size:1.3rem;
+  margin:20px 0;
+}
+
+/* Screenshot styling */
+.psx-screenshot{
+  width:100%;
+  border:2px solid var(--accent);
+  margin-top:15px;
+  filter:contrast(1.1) saturate(1.1);
+  transition:.2s ease;
+}
+
+.psx-screenshot:hover{
+  transform:scale(1.01);
+  box-shadow:0 0 20px rgba(255,161,0,.25);
+}
+
+/* Download / CTA text */
+.psx-download{
+  text-align:center;
+  font-family:'VT323', monospace;
+  font-size:1.8rem;
+  color:var(--accent);
+  margin-top:20px;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{opacity:.8;}
+  50%{opacity:1;}
+}
+
+/* =========================
+   PRESS KIT SPECIFIC
+========================= */
+.presskit{
+  max-width:900px;
+  margin:0 auto;
+}
+
+.section{
+  border-left:2px solid var(--accent);
+  padding-left:15px;
+  margin-bottom:40px;
+}
+
+.meta{
+  color:var(--text-dim);
+  line-height:1.6;
+}
+
+.screenshots img{
+  width:100%;
+  border:2px solid var(--accent);
+  margin-top:10px;
+}
+
+/* =========================
+   BOOT SCREEN
+========================= */
+#boot-screen{
+  position:fixed;
+  inset:0;
+  background:#000;
+  color:var(--accent);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  font-family:'Share Tech Mono', monospace;
+  animation:bootFade 3s forwards;
+}
+
+@keyframes bootFade{
+  0%{opacity:1;}
+  80%{opacity:1;}
+  100%{opacity:0; visibility:hidden;}
+}
+
+.boot-text{
+  white-space:pre-line;
+  text-shadow:0 0 10px var(--accent);
+}
+
+/* =========================
+   CRT FLASH EFFECT
+========================= */
+#crt-flash{
+  position:fixed;
+  inset:0;
+  background:white;
+  opacity:0.15;
+  pointer-events:none;
+  z-index:9998;
+  animation:crtFlash .4s ease-out;
+}
+
+@keyframes crtFlash{
+  0%{opacity:0.2;}
+  100%{opacity:0;}
+}
